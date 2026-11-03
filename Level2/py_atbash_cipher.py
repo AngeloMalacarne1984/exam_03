@@ -1,7 +1,7 @@
 def atbash_cipher(text: str) -> str:
     return "".join(
-        chr(219 - ord(c)) if "a" <= c <= "z" else
-        chr(155 - ord(c)) if "A" <= c <= "Z" else c
+        chr(ord("a") + ord("z") - ord(c)) if "a" <= c <= "z" else
+        chr(ord("A") + ord("Z") - ord(c)) if "A" <= c <= "Z" else c
         for c in text
     )
 
