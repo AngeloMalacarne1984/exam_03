@@ -5,9 +5,9 @@ def longest_digit_run(text: str) -> int:
     for i in range(0, len(text)):
         curr_num: str = text[i]
         
-        if curr_num < '0' or curr_num > '9':
+        if not curr_num.isdigit():
             counter = 0
-        elif i > 0 and curr_num == text[i - 1] and (curr_num >= '0' and curr_num <= '9'):
+        elif i > 0 and curr_num == text[i - 1] and curr_num.isdigit():
             counter += 1
         else:
             counter = 1
