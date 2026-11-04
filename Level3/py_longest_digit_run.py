@@ -7,7 +7,7 @@ def longest_digit_run(text: str) -> int:
         
         if curr_num < '0' or curr_num > '9':
             counter = 0
-        elif curr_num == text[i - 1] and (curr_num >= '0' and curr_num <= '9'):
+        elif i > 0 and curr_num == text[i - 1] and (curr_num >= '0' and curr_num <= '9'):
             counter += 1
         else:
             counter = 1
