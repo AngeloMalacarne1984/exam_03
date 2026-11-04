@@ -16,3 +16,13 @@ def max_nesting_depth(s: str) -> int:
         return max_depth
     else:
         return -1
+
+if __name__ == "__main__":
+    print(max_nesting_depth("(a(b)c)"))              # 2
+    print(max_nesting_depth("()()"))                 # 1
+    print(max_nesting_depth("((()))"))               # 3
+    print(max_nesting_depth("(1+(2*3)+((8)/4))+1"))  # 3
+    print(max_nesting_depth("abc"))                  # 0
+    print(max_nesting_depth("(()"))                  # -1
+    print(max_nesting_depth(")("))                   # -1
+    print(max_nesting_depth(""))                     # 0
