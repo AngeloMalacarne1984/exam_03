@@ -1,16 +1,16 @@
 def run_length_encode(text: str) -> str:
-    res = []
-    curr, count = "", 0
-    for c in text:
-        if c == curr:
+    if not text:
+        return ""
+    
+    res, count = "", 1
+    for i in range(1, len(text)):
+        if text[i] == text[i - 1]:
             count += 1
         else:
-            if curr:
-                res.append(f"{curr}{count}")
-            curr, count = c, 1
-    if curr:
-        res.append(f"{curr}{count}")
-    return "".join(res)
+            res += f"{text[i - 1]}{count}"
+            count = 1
+
+    return res + f"{text[-1]}{count}"
 
 def main():
     print(run_length_encode("aaabcc"))        # a3b1c2
